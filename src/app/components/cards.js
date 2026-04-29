@@ -251,14 +251,13 @@ export default function HowItWorks() {
                   <div className="p-[2px] rounded-[32px] bg-gradient-to-br from-white via-purple-300 to-purple-600">
                     <div className="bg-white rounded-[30px] p-6 shadow-xl text-left">
                       {/* Image Container */}
-                      <div className="relative h-[220px] mb-6 overflow-hidden rounded-[24px]">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                      </div>
+                     <div className="relative h-[220px] mb-6 overflow-hidden rounded-[24px]">
+  <img
+    src={item.image}
+    alt={item.title}
+    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+  />
+</div>
 
                       {/* Text */}
                       <h3 className="text-xl font-semibold mb-2 text-gray-900">
