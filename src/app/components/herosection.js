@@ -568,22 +568,14 @@
 // // }
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useState } from "react";
 
 export default function HeroSection() {
   const [activeImage, setActiveImage] = useState(null);
   const [activeTitle, setActiveTitle] = useState("");
   const [activeDesc, setActiveDesc] = useState("");
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Prevent hydration mismatch
-  if (!mounted) return null;
-
+  // Reusable Hover Function
   const openPreview = (image, title, desc) => {
     setActiveImage(image);
     setActiveTitle(title);
@@ -600,51 +592,61 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#f6ddff_0%,#ffffff_102%,#ffffff_100%)]"></div>
 
-      {/* Glow */}
+      {/* Purple Glow */}
       <div className="absolute top-[-220px] left-1/2 -translate-x-1/2 w-[1050px] h-[1050px] rounded-full bg-purple-300/30 blur-2xl"></div>
 
-      {/* ================= HOVER PREVIEW ================= */}
+      {/* ================= FULL HERO IMAGE ON HOVER ================= */}
       {activeImage && (
-        <div onMouseLeave={closePreview} className="absolute inset-0 z-50">
-
-          <Image
+        <div
+          onMouseLeave={closePreview}
+          className="absolute inset-0 z-50"
+        >
+          <img
             src={activeImage}
             alt=""
-            fill
-            className="object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/45"></div>
 
           {/* Navbar */}
-          <header className="relative z-10 w-full px-8 py-6 flex justify-between items-center text-white">
-            <div className="text-3xl font-semibold">Artiq</div>
+          <header className="relative z-10 w-full px-8 py-6 flex items-center justify-between">
+            <div className="text-3xl font-semibold text-white">Artiq</div>
 
-            <nav className="hidden md:flex gap-10 text-sm">
+            <nav className="hidden md:flex items-center gap-10 text-[15px] font-medium text-white">
               <a href="#">Home</a>
               <a href="#">Pages</a>
               <a href="#">Blog</a>
               <a href="#">Shop</a>
               <a href="#">Contacts</a>
             </nav>
+
+            <div className="flex items-center gap-3">
+              <button className="w-11 h-11 rounded-full border border-white/50 text-white flex items-center justify-center">🔍</button>
+              <button className="px-5 h-11 rounded-full border border-white/50 text-sm text-white">Search</button>
+              <button className="w-11 h-11 rounded-full border border-white/50 text-white flex items-center justify-center">☰</button>
+            </div>
           </header>
 
           {/* Text */}
           <div className="relative z-10 max-w-6xl mx-auto mt-32 flex justify-end px-8">
-            <div className="max-w-3xl">
-              <h1 className="text-[72px] leading-[78px] font-semibold bg-gradient-to-r from-white via-purple-100 to-purple-400 bg-clip-text text-transparent animate-[fadeUp_0.8s_ease_forwards]">
+
+            <div className="max-w-3xl text-left">
+              <h1 className="text-[72px] leading-[78px] font-semibold tracking-tight bg-gradient-to-r from-white via-purple-100 to-purple-400 bg-clip-text text-transparent animate-fadeUp">
                 {activeTitle}
               </h1>
 
-              <p className="mt-6 text-lg text-white animate-[fadeUp_0.8s_ease_forwards]">
+              <p className="mt-6 text-lg leading-8 text-white animate-fadeUp delay-150">
                 {activeDesc}
               </p>
             </div>
+
           </div>
         </div>
       )}
 
-      {/* LEFT IMAGES */}
+      {/* ================= LEFT SIDE IMAGES ================= */}
+
       <div
         onMouseEnter={() =>
           openPreview(
@@ -653,7 +655,7 @@ export default function HeroSection() {
             "Generate elegant portrait artwork with premium AI creativity."
           )
         }
-        className="absolute top-[110px] left-[35px]"
+        className="absolute top-[110px] left-[35px] z-20 cursor-pointer"
       >
         <CircleBig img="/0567c49a5d53b1957fcec7035a09ce04.jpg" />
       </div>
@@ -663,10 +665,10 @@ export default function HeroSection() {
           openPreview(
             "/4c351506445e3f6016c2ba5124dacb45.jpg",
             "Beauty Fashion Photos",
-            "Premium model visuals generated instantly."
+            "Premium model and beauty visuals generated in seconds."
           )
         }
-        className="absolute top-[330px] left-[125px]"
+        className="absolute top-[330px] left-[125px] z-20 cursor-pointer"
       >
         <CircleSmall img="/fcf5203e033887fc80be9f97cbdbe71a.jpg" />
       </div>
@@ -675,25 +677,26 @@ export default function HeroSection() {
         onMouseEnter={() =>
           openPreview(
             "/284575513de8cb87610a36d9b81a46b3.jpg",
-            "Elegant Lifestyle",
-            "Create classy lifestyle visuals."
+            "Elegant Lifestyle Scenes",
+            "Create classy lifestyle and travel inspired visuals."
           )
         }
-        className="absolute top-[520px] left-[55px]"
+        className="absolute top-[520px] left-[55px] z-20 cursor-pointer"
       >
         <CircleSmall img="/1a120b9d7b2a7efb27978202efb0e2de.jpg" />
       </div>
 
-      {/* RIGHT IMAGES */}
+      {/* ================= RIGHT SIDE IMAGES ================= */}
+
       <div
         onMouseEnter={() =>
           openPreview(
             "/d14c9713dbb7223a6720bc0d90234e34.jpg",
-            "Modern Portraits",
-            "Cinematic branding portraits."
+            "Modern Male Portraits",
+            "Cinematic branding portraits for creators and influencers."
           )
         }
-        className="absolute top-[110px] right-[35px]"
+        className="absolute top-[110px] right-[35px] z-20 cursor-pointer"
       >
         <CircleBig img="/0567c49a5d53b1957fcec7035a09ce04.jpg" />
       </div>
@@ -702,11 +705,11 @@ export default function HeroSection() {
         onMouseEnter={() =>
           openPreview(
             "/4c351506445e3f6016c2ba5124dacb45.jpg",
-            "Business Look",
-            "Clean professional visuals."
+            "Professional Business Look",
+            "Generate clean business profile visuals with AI."
           )
         }
-        className="absolute top-[330px] right-[125px]"
+        className="absolute top-[330px] right-[125px] z-20 cursor-pointer"
       >
         <CircleSmall img="/fcf5203e033887fc80be9f97cbdbe71a.jpg" />
       </div>
@@ -715,42 +718,57 @@ export default function HeroSection() {
         onMouseEnter={() =>
           openPreview(
             "/284575513de8cb87610a36d9b81a46b3.jpg",
-            "Street Fashion",
-            "Urban AI fashion scenes."
+            "Street Fashion Trends",
+            "Urban streetwear scenes created with smart AI tools."
           )
         }
-        className="absolute top-[500px] right-[55px]"
+        className="absolute top-[500px] right-[55px] z-20 cursor-pointer"
       >
         <CircleSmall img="/1a120b9d7b2a7efb27978202efb0e2de.jpg" />
       </div>
 
-      {/* DEFAULT TEXT */}
+      {/* ================= DEFAULT HERO CONTENT ================= */}
       {!activeImage && (
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <h1 className="mt-20 text-[72px] font-semibold text-black">
-            Light for Every Life, Hope for Every Heart
-          </h1>
+          <h1 className="mt-20 text-[72px] leading-[78px] font-semibold tracking-tight text-black">
+                   Light for Every Life, Hope for Every Heart
+            </h1>
 
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-500">
+          <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-500 leading-8">
             Empowering the backbone of India with sustainable resources.
           </p>
         </div>
       )}
+
+      {/* CSS */}
+      <style jsx>{`
+        .animate-fadeUp {
+          animation: fadeUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(35px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 }
 
-/* COMPONENTS */
+/* Reusable Circle Components */
 
 function CircleBig({ img }) {
   return (
-    <div className="w-[200px] h-[200px] rounded-full p-[4px] bg-gradient-to-br from-pink-500 to-purple-500 shadow-xl hover:scale-110 transition">
-      <Image
+    <div className="w-[200px] h-[200px] rounded-full p-[4px] bg-gradient-to-br from-pink-500 to-purple-500 shadow-xl hover:scale-110 transition duration-500">
+      <img
         src={img}
-        alt=""
-        width={200}
-        height={200}
-        className="rounded-full object-cover"
+        className="w-full h-full rounded-full object-cover border-2 border-white"
       />
     </div>
   );
@@ -758,13 +776,10 @@ function CircleBig({ img }) {
 
 function CircleSmall({ img }) {
   return (
-    <div className="w-[150px] h-[150px] rounded-full p-[3px] bg-gradient-to-br from-pink-500 to-purple-500 shadow-lg hover:scale-110 transition">
-      <Image
+    <div className="w-[150px] h-[150px] rounded-full p-[3px] bg-gradient-to-br from-pink-500 to-purple-500 shadow-lg hover:scale-110 transition duration-500">
+      <img
         src={img}
-        alt=""
-        width={150}
-        height={150}
-        className="rounded-full object-cover"
+        className="w-full h-full rounded-full object-cover border border-white"
       />
     </div>
   );
