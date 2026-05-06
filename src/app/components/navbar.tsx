@@ -393,14 +393,43 @@ export default function Navbar() {
           </div>
 
           <Link href="/campaign" className="hover:text-purple-600 transition-colors">Campaign</Link>
+            <div
+            className="relative py-4"
+            onMouseEnter={() => setMenuId(4)}
+            onMouseLeave={() => setMenuId(0)}
+          >
+            <span className={`cursor-pointer transition-colors ${menuId === 4 ? "text-purple-600" : "hover:text-purple-600"}`}>
+           Publications
+            </span>
+            {menuId === 4 && (
+              <div className="absolute left-1/2 -translate-x-1/2 pt-4 w-52">
+                <div className="bg-white p-4 shadow-2xl border border-gray-100 rounded-2xl flex flex-col gap-2 animate-in fade-in slide-in-from-top-2 duration-300">
+                  <Link href="/photo" className="px-3 py-2 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-all">Photo Gallary</Link>
+                 <a 
+  href="https://www.youtube.com/@SwachetnaFoundation/videos" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="px-3 py-2 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-all"
+>
+  Videos
+</a>
+                  <Link href="/news" className="px-3 py-2 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-all">News Letter</Link>
+                    <Link href="/annual" className="px-3 py-2 rounded-lg hover:bg-purple-50 hover:text-purple-600 transition-all">Annual Reports</Link>
+                </div>
+              </div>
+            )}
+          </div>
+             <Link href="/contacts" className="hover:text-purple-600 transition-colors">Contacts</Link>
         </nav>
 
         {/* Action Button */}
-        <div className="flex items-center gap-3">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md shadow-purple-200 transition-all active:scale-95">
-            Donate Now
-          </button>
-        </div>
+       <div className="flex items-center gap-3">
+  <Link href="/donate">
+    <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-md shadow-purple-200 transition-all active:scale-95">
+      Donate Now
+    </button>
+  </Link>
+</div>
       </div>
     </header>
   );
