@@ -305,7 +305,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex justify-center">
       <div
-        className={`mt-4 w-[92%] max-w-7xl flex items-center justify-between bg-white/70 backdrop-blur-xl border border-white/30 shadow-lg rounded-full transition-all duration-500 ${
+        className={`mt-4 w-[92%] max-w-7xl flex items-center justify-between bg-white backdrop-blur-xl border border-white/30 shadow-lg rounded-full transition-all duration-500 ${
           scrolled ? "py-2 px-5" : "py-4 px-8"
         }`}
       >
