@@ -1,16 +1,29 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Activity, Truck, Heart, ShieldCheck, Zap } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Activity, Truck, Heart, ShieldCheck } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+
+/* ✅ TYPE DEFINITION */
+type InfoCardProps = {
+  title: string;
+  icon?: LucideIcon;
+  children: React.ReactNode;
+  delay?: number;
+};
 
 /**
  * Clean White & Purple Theme
- * Stability Fix: Destructured arguments with default value for delay
  */
-const InfoCard = ({ title, icon: IconComponent, children, delay = 0 }) => {
+const InfoCard = ({
+  title,
+  icon: IconComponent,
+  children,
+  delay = 0,
+}: InfoCardProps) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -22,9 +35,11 @@ const InfoCard = ({ title, icon: IconComponent, children, delay = 0 }) => {
         <div className="p-3 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl text-white shadow-lg shadow-purple-200">
           {IconComponent && <IconComponent size={24} />}
         </div>
-        <h3 className="text-xl font-extrabold text-slate-800 leading-tight">{title}</h3>
+        <h3 className="text-xl font-extrabold text-slate-800 leading-tight">
+          {title}
+        </h3>
       </div>
-      
+
       <div className="text-slate-600 space-y-3 flex-grow text-sm md:text-base leading-relaxed">
         {children}
       </div>
@@ -36,7 +51,6 @@ export default function PetCtCampaign() {
   return (
     <div className="h-[600px] bg-[#FCFBFF] py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        
         {/* Header Section */}
         <header className="text-center mb-20">
           <motion.div
@@ -46,49 +60,37 @@ export default function PetCtCampaign() {
           >
             Swachetna Foundation
           </motion.div>
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tight"
           >
-            Mobile <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">PET/CT</span> Unit
+            Mobile{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+              PET/CT
+            </span>{" "}
+            Unit
           </motion.h1>
+
           <p className="text-slate-500 max-w-2xl mx-auto text-lg md:text-xl font-medium">
-            Bridging the gap in cancer diagnostics with advanced technology on wheels.
+            Bridging the gap in cancer diagnostics with advanced technology on
+            wheels.
           </p>
         </header>
 
-        {/* Grid Layout */}
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
           <InfoCard title="Why PET/CT?" icon={Activity} delay={0.1}>
-            <p className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> 
-              Early cancer detection
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> 
-              Precise tumor staging
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> 
-              Cardiac & Neuro imaging
-            </p>
+            <p>• Early cancer detection</p>
+            <p>• Precise tumor staging</p>
+            <p>• Cardiac & Neuro imaging</p>
           </InfoCard>
 
           <InfoCard title="The Unit" icon={Truck} delay={0.2}>
-            <p className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> 
-              50–70 patients daily
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> 
-              Solar & GPS enabled
-            </p>
-            <p className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> 
-              Licensed experts
-            </p>
+            <p>• 50–70 patients daily</p>
+            <p>• Solar & GPS enabled</p>
+            <p>• Licensed experts</p>
           </InfoCard>
 
           <InfoCard title="Services" icon={ShieldCheck} delay={0.3}>
@@ -106,11 +108,7 @@ export default function PetCtCampaign() {
             <p>• Real-time Impact reports</p>
             <p>• Community health data</p>
           </InfoCard>
-
         </div>
-
-        {/* Partnership Section - Deep Purple Theme */}
-        
       </div>
     </div>
   );
