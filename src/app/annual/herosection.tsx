@@ -51,7 +51,7 @@ const HeroSection = () => {
           >
             {/* Verbatim reference to the requested file: 64ec91b789fa792fa725fdd8c8daea10.jpg */}
             <img 
-              src="/16b95f1195cc4de0bdaaeb7d9e381ad3.jpg" 
+              src="/image copy.png" 
               alt="Digital landscape illustration" 
               className="w-full h-auto object-contain drop-shadow-2xl"
             />

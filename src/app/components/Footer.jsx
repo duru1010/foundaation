@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-[#7c75d8] px-4 py-10 flex justify-center">
@@ -8,21 +12,24 @@ export default function Footer() {
           
           {/* LEFT */}
           <div className="max-w-md">
-            <div className="flex items-center gap-2 font-semibold text-lg mb-2">
-              <div className="bg-[#6c63ff] text-white px-2 py-1 rounded-md">
-                ⬢
-              </div>
-              DevStack
-            </div>
+            
+            {/* ✅ LOGO ADDED */}
+            <Image
+              src="/WhatsApp Image 2026-04-28 at 11.30.42 AM (1).jpeg" // put your logo inside /public/logo.png
+              alt="Swachetna Foundation"
+              width={180}
+              height={60}
+              className="mb-4"
+            />
 
             <p className="text-sm text-gray-500 mb-4">
-              Streamlining business operations for small businesses with
-              powerful, easy-to-use software solutions.
+              Swachetna Foundation is a Pune-based NGO focused on empowering communities through health, education, and sustainability.
             </p>
 
             <div className="flex gap-3 text-lg">
-              <span className="cursor-pointer">🌐</span>
-              <span className="cursor-pointer">🐦</span>
+              <span className="cursor-pointer">📘</span>
+              <span className="cursor-pointer">📸</span>
+              <span className="cursor-pointer">▶️</span>
               <span className="cursor-pointer">💼</span>
             </div>
           </div>
@@ -34,8 +41,7 @@ export default function Footer() {
             </h4>
 
             <p className="text-sm text-gray-500 mb-3">
-              Get the latest updates, tips, and product news delivered straight
-              to your inbox.
+              Get updates on our initiatives, events, and impact stories.
             </p>
 
             <div className="flex">
@@ -50,8 +56,7 @@ export default function Footer() {
             </div>
 
             <p className="text-xs text-gray-400 mt-2">
-              By subscribing, you agree to our Privacy Policy and consent to
-              receive updates.
+              By subscribing, you agree to receive updates from Swachetna Foundation.
             </p>
           </div>
         </div>
@@ -60,46 +65,31 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mt-10 text-sm">
           
           <div>
-            <h5 className="text-gray-400 text-xs mb-3">PRODUCTS</h5>
+            <h5 className="text-gray-400 text-xs mb-3">EXPLORE</h5>
             <ul className="space-y-2">
-              <li>Business Suite</li>
-              <li>Client Manager</li>
-              <li>Finance Tools</li>
-              <li>Project Tracker</li>
-              <li>Reporting</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 className="text-gray-400 text-xs mb-3">SOLUTIONS</h5>
-            <ul className="space-y-2">
-              <li>For Startups</li>
-              <li>For Small Business</li>
-              <li>For Agencies</li>
-              <li>For E-commerce</li>
-              <li>Enterprise</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 className="text-gray-400 text-xs mb-3">RESOURCES</h5>
-            <ul className="space-y-2">
-              <li>Documentation</li>
-              <li>Guides</li>
-              <li>API Reference</li>
-              <li>Blog</li>
-              <li>Community</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 className="text-gray-400 text-xs mb-3">COMPANY</h5>
-            <ul className="space-y-2">
-              <li>About Us</li>
-              <li>Careers</li>
-              <li>Press</li>
-              <li>Partners</li>
+              <li>Our Impact</li>
+              <li>We Work For</li>
+              <li>Get Involved</li>
               <li>Contact</li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-gray-400 text-xs mb-3">MEDIA</h5>
+            <ul className="space-y-2">
+              <li>Press Release</li>
+              <li>Print Media</li>
+              <li>Social Media</li>
+              <li>Events</li>
+            </ul>
+          </div>
+
+          <div>
+            <h5 className="text-gray-400 text-xs mb-3">CONTACT</h5>
+            <ul className="space-y-2">
+              <li>📍 Vimanagar, Pune</li>
+              <li>📞 +91 7709556629</li>
+              <li>📧 info@swachetna.org</li>
             </ul>
           </div>
 
@@ -108,22 +98,29 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>Privacy Policy</li>
               <li>Terms of Service</li>
-              <li>Cookie Policy</li>
-              <li>GDPR Compliance</li>
-              <li>Security</li>
             </ul>
           </div>
+
+          <div>
+            <h5 className="text-gray-400 text-xs mb-3">ABOUT</h5>
+            <ul className="space-y-2">
+              <li>About Us</li>
+              <li>Mission & Vision</li>
+              <li>Our Team</li>
+            </ul>
+          </div>
+
         </div>
 
         {/* BOTTOM */}
         <div className="border-t border-gray-300 mt-10 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs text-gray-500">
           <div className="flex flex-col md:flex-row md:gap-6 gap-2">
-            <span>📧 contact@devstack.com</span>
-            <span>📞 +1 (555) 123-4567</span>
-            <span>📍 123 Business Ave, Suite 100, San Francisco, CA 94107</span>
+            <span>📧 info@swachetna.org</span>
+            <span>📞 +91 7709556629</span>
+            <span>📍 Vimanagar, Pune</span>
           </div>
 
-          <p>© 2025 DevStack, Inc. All rights reserved.</p>
+          <p>© 2025 Swachetna Foundation</p>
         </div>
 
       </div>

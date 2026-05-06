@@ -84,7 +84,7 @@ export default function ExactHeroSection() {
             }}
           >
             <Image
-              src="/5750a2705303770de9eb378ab102c02d.jpg" 
+              src="/image.png" 
               alt="Community focus"
               fill
               className="object-cover object-center"
