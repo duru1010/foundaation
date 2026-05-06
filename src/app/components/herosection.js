@@ -610,23 +610,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-black/45"></div>
 
           {/* Navbar */}
-          <header className="relative z-10 w-full px-8 py-6 flex items-center justify-between">
-            <div className="text-3xl font-semibold text-white">Artiq</div>
-
-            <nav className="hidden md:flex items-center gap-10 text-[15px] font-medium text-white">
-              <a href="#">Home</a>
-              <a href="#">Pages</a>
-              <a href="#">Blog</a>
-              <a href="#">Shop</a>
-              <a href="#">Contacts</a>
-            </nav>
-
-            <div className="flex items-center gap-3">
-              <button className="w-11 h-11 rounded-full border border-white/50 text-white flex items-center justify-center">🔍</button>
-              <button className="px-5 h-11 rounded-full border border-white/50 text-sm text-white">Search</button>
-              <button className="w-11 h-11 rounded-full border border-white/50 text-white flex items-center justify-center">☰</button>
-            </div>
-          </header>
+         
 
           {/* Text */}
           <div className="relative z-10 max-w-6xl mx-auto mt-32 flex justify-end px-8">
