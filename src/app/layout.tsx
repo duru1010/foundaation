@@ -4,6 +4,8 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import ScrollAnimations from "./components/ScrollAnimations";
 import Navbar from "./components/navbar";
+// 1. Import the Script component
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +33,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* 2. Load the Razorpay SDK */}
+        <Script
+          id="razorpay-checkout-js"
+          src="https://checkout.razorpay.com/v1/checkout.js"
+          strategy="beforeInteractive" 
+        />
+        
         <ScrollAnimations />
-
         <Navbar />
 
         <main className="flex-1">
