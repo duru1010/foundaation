@@ -2,6 +2,8 @@
 
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function PranitvaCampaignCard() {
   return (
@@ -59,15 +61,18 @@ export function PranitvaCampaignCard() {
           </CardItem>
 
           {/* Action Button */}
-          <div className="flex justify-center items-center mt-8">
-            <CardItem
-              translateZ={50}
-              as="button"
-              className="px-10 py-3 rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs font-bold transition-all shadow-lg shadow-purple-100 active:scale-95"
-            >
-              Donate Now
-            </CardItem>
-          </div>
+        <Link href="/donate" className="block w-full">
+    <motion.button 
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      className="w-full bg-purple-600 text-white font-black py-5 rounded-2xl shadow-2xl shadow-purple-200 hover:bg-purple-700 transition-all flex items-center justify-center gap-3 group"
+    >
+      Donate Now
+      <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </motion.button>
+  </Link>
         </CardBody>
       </CardContainer>
     </div>

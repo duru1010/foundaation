@@ -78,6 +78,8 @@
 
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function AatmanirbharCardGroup() {
   return (
@@ -157,11 +159,18 @@ export function AatmanirbharCardGroup() {
             <CardItem translateZ={30} className="w-full bg-gray-100 h-2 rounded-full mt-2 overflow-hidden">
               <div className="bg-[#7C3AED] h-full w-[0%]" />
             </CardItem>
-            <div className="flex justify-center items-center mt-8">
-              <CardItem translateZ={50} as="button" className="px-8 py-2 rounded-full bg-[#7C3AED] text-white text-xs font-bold">
-                Support
-              </CardItem>
-            </div>
+            <Link href="/donate" className="block w-full">
+    <motion.button 
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      className="w-full bg-purple-600 text-white font-black py-5 rounded-2xl shadow-2xl shadow-purple-200 hover:bg-purple-700 transition-all flex items-center justify-center gap-3 group"
+    >
+      Donate Now
+      <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </motion.button>
+  </Link>
           </CardBody>
         </CardContainer>
 
