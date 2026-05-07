@@ -156,7 +156,7 @@ const CAMPAIGNS = [
     goal: "₹20 Lakhs",
     progress: "25%",
     color: "#9b4d96",
-    btnColor: "bg-[#fbc02d] hover:bg-[#f9a825]",
+    btnColor: "bg-[#7C3AED] hover:bg-[#6D28D9]",
   },
   {
     path: "swasthya-seva",
@@ -235,10 +235,12 @@ export default function CampaignGrid() {
                     </div>
 
                     <div className="flex justify-center items-center mt-8">
-                      <div className={`px-10 py-3 rounded-full text-white text-xs font-bold ${item.btnColor}`}>
-                        Donate Now
-                      </div>
-                    </div>
+  <Link href="/donation">
+    <button className={`px-10 py-3 rounded-full text-white text-xs font-bold transition-transform hover:scale-105 ${item.btnColor}`}>
+      Donate Now
+    </button>
+  </Link>
+</div>
                   </CardBody>
                 </Link>
               </CardContainer>

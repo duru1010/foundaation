@@ -169,14 +169,14 @@ export default function HowItWorks() {
       title: "ANNADATA",
       desc: "Select realistic, anime, 3D, sketch, watercolor or custom art style.",
       image: "/WhatsApp Image 2026-04-28 at 3.39.06 PM (10).jpeg",
-      link: "/annadata",
+      link: "/anna",
     },
     {
       id: "05",
       title: "SWABHIMAN",
       desc: "Describe your imagination and let AI turn your words into visuals.",
       image: "/WhatsApp Image 2026-04-28 at 3.39.05 PM.jpeg",
-      link: "/swabhiman",
+      link: "/swabhi",
     },
     {
       id: "06",
@@ -204,7 +204,7 @@ export default function HowItWorks() {
       title: "AGOGYA",
       desc: "Publish your generated art directly to social platforms quickly.",
       image: "/WhatsApp Image 2026-04-28 at 3.39.06 PM (7).jpeg",
-      link: "/arogya",
+      link: "agogya",
     },
   ];
 
@@ -251,13 +251,14 @@ export default function HowItWorks() {
                   <div className="p-[2px] rounded-[32px] bg-gradient-to-br from-white via-purple-300 to-purple-600">
                     <div className="bg-white rounded-[30px] p-6 shadow-xl text-left">
                       {/* Image Container */}
-                     <div className="relative h-[220px] mb-6 overflow-hidden rounded-[24px]">
-  <img
-    src={item.image}
-    alt={item.title}
-    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-  />
-</div>
+                      <div className="relative h-[220px] mb-6 overflow-hidden rounded-[24px]">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      </div>
 
                       {/* Text */}
                       <h3 className="text-xl font-semibold mb-2 text-gray-900">

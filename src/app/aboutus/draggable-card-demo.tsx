@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   DraggableCardBody,
@@ -53,7 +54,7 @@ export function DraggableCardDemo() {
   ];
 
   return (
-    <section className="w-full min-h-screen bg-white px-10 lg:px-20 py-20">
+    <section className="relative z-30 -mt-32 w-full h-[900px] bg-white px-10 lg:px-50 py-20 ">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
 
         {/* LEFT SIDE CARDS */}
@@ -91,9 +92,12 @@ export function DraggableCardDemo() {
             unforgettable experiences.
           </p>
 
-          <button className="px-8 py-4 bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 transition duration-300 font-semibold">
-            Join Us
-          </button>
+         
+<Link href="/campaign">
+  <button className="px-8 py-4 bg-purple-600 text-white rounded-xl shadow-lg hover:bg-purple-700 transition duration-300 font-semibold">
+    Join Us
+  </button>
+</Link>
         </div>
 
       </div>

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+
 
 const DonationDashboard = () => {
   const [selectedAmount, setSelectedAmount] = useState<number | string>(100);
@@ -132,16 +134,18 @@ const DonationDashboard = () => {
             </div>
 
             <div className="pt-2">
-              <motion.button 
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-purple-600 text-white font-black py-5 rounded-2xl shadow-2xl shadow-purple-200 hover:bg-purple-700 transition-all flex items-center justify-center gap-3 group"
-              >
-                Donate Now
-                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </motion.button>
+               <Link href="/donate" className="block w-full">
+    <motion.button 
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      className="w-full bg-purple-600 text-white font-black py-5 rounded-2xl shadow-2xl shadow-purple-200 hover:bg-purple-700 transition-all flex items-center justify-center gap-3 group"
+    >
+      Donate Now
+      <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </motion.button>
+  </Link>
               <p className="text-center text-[10px] text-zinc-400 mt-5 uppercase font-bold tracking-[0.2em]">Empowering through Swachetna Foundation</p>
             </div>
           </motion.div>
