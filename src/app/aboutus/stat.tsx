@@ -244,7 +244,7 @@ const BusinessCircleAnalysis = () => {
             </div>
 
             {/* Grid for Circles: Center on mobile, 2 columns on small tablets, 4 on desktop */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 sm:gap-x-8">
+           <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 sm:gap-x-8">
               {stats.map((stat, i) => (
                 <StatCircle 
                   key={i} 

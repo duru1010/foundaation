@@ -220,6 +220,8 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 const AatmanirbharCard = () => {
   return (
@@ -313,9 +315,11 @@ const AatmanirbharCard = () => {
             ))}
           </div>
 
-          <button className="mt-12 w-fit rounded-2xl bg-[#7C3AED] px-10 py-5 text-lg font-bold text-white shadow-xl shadow-purple-200 transition-all hover:bg-[#6D28D9] hover:-translate-y-1 active:scale-95">
-            Support the Mission
-          </button>
+           <Link href="/campaign">
+  <button className="mt-12 w-fit rounded-2xl bg-[#7C3AED] px-10 py-5 text-lg font-bold text-white shadow-xl shadow-purple-200 transition-all hover:bg-[#6D28D9] hover:-translate-y-1 active:scale-95">
+    Support the Mission
+  </button>
+</Link>
         </div>
 
       </div>

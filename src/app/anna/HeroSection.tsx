@@ -106,22 +106,21 @@
 //   );
 // }
 
-
-'use client';
+"use client";
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 
 export default function CocoberryHero() {
   const bowlVariants: Variants = {
-    hidden: { 
-      x: -600, 
-      opacity: 0, 
-      rotate: -120 
+    hidden: {
+      x: -600,
+      opacity: 0,
+      rotate: -120
     },
-    visible: { 
-      x: 0, 
-      opacity: 1, 
+    visible: {
+      x: 0,
+      opacity: 1,
       rotate: 0,
       transition: {
         type: "spring",
@@ -141,68 +140,111 @@ export default function CocoberryHero() {
   };
 
   return (
-    <section className="relative w-full h-[500px] flex items-center overflow-hidden bg-[#F3E8FF]">
-      
-      {/* Background Diagonal Split: Pure White and Light Purple */}
-      <div 
-        className="absolute inset-0 bg-white" 
+    <section className="relative w-full min-h-[580px] md:h-[500px] flex items-center overflow-hidden bg-[#F3E8FF]">
+
+      {/* Background Diagonal Split */}
+      <div
+        className="absolute inset-0 bg-white hidden md:block"
         style={{ clipPath: 'polygon(65% 0, 100% 0, 100% 100%, 35% 100%)' }}
       />
 
-      <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-8 items-center relative z-10">
-        
-        {/* Left Content */}
-        <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="space-y-6"
-        >
-          <h4 className="text-2xl md:text-4xl font-black uppercase leading-none tracking-tighter text-white">
-            Completely <br /> 
-            <span className="text-[#7C3AED]">Indian brand</span>
-          </h4>
-          
-          <p className="text-sm md:text-base font-medium max-w-sm text-gray opacity-80 leading-relaxed">
-            Cocoberry is India's first and leading frozen yogurt brand. 
-            We are 8 years old and have the largest network of outlets.
-          </p>
-          
-          <div className="flex gap-4 pt-2">
-            <button className="px-8 py-3 bg-[#7C3AED] text-white font-bold rounded-full text-xs uppercase tracking-widest shadow-lg hover:bg-[#6D28D9] transition-all">
-              view more
-            </button>
-           
-          </div>
-        </motion.div>
+      {/* MOBILE BACKGROUND */}
+      <div className="absolute inset-0 md:hidden bg-gradient-to-b from-[#F3E8FF] via-white to-[#F3E8FF]" />
 
-        {/* Right Content: Bowl in a Circle with Entrance Animation */}
-        <div className="relative flex justify-center items-center">
-          
-          <motion.div 
+      <div className="container mx-auto px-6 md:px-12 relative z-10 w-full">
+
+        {/* MOBILE VIEW */}
+        <div className="flex flex-col md:hidden items-center text-center pt-20 pb-16">
+
+          {/* IMAGE */}
+          <motion.div
             variants={bowlVariants}
             initial="hidden"
             animate={["visible", "animate"]}
-            className="relative w-[220px] h-[220px] md:w-[420px] md:h-[420px]"
+            className="relative w-[260px] h-[260px]"
           >
-            {/* The Bowl in a Clean White Circular Container */}
-            <div className="w-full h-full rounded-full overflow-hidden border-[12px] border-white shadow-[0_20px_50px_rgba(124,58,237,0.2)] bg-white p-2">
-                <img 
-                  src="/847b5c83429fbfd7fdeb7dd70f56fdda.jpg" 
-                  alt="Cocoberry Bowl"
-                  className=" object-cover rounded-full"
-                />
+            <div className="w-full h-full rounded-full overflow-hidden border-[10px] border-white shadow-[0_20px_50px_rgba(124,58,237,0.2)] bg-white p-2">
+              <img
+                src="/847b5c83429fbfd7fdeb7dd70f56fdda.jpg"
+                alt="Cocoberry Bowl"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
-            
-            {/* Show Menu Overlay Circle */}
-            <motion.div 
-             
-            >
-             
-            </motion.div>
           </motion.div>
 
+          {/* CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-10 space-y-6"
+          >
+            <h4 className="text-xl md:text-4xl font-black uppercase leading-none tracking-tighter text-black">
+  Nourishing <br />
+  <span className="text-[#7C3AED]">Every Family</span>
+</h4>
+
+<p className="text-sm md:text-base font-medium max-w-sm text-gray opacity-80 leading-relaxed">
+  Annapurna is dedicated to serving communities with purity, trust, 
+  and sustainable food solutions that bring hope, nutrition, and care 
+  to every household across India.
+</p>
+
+           
+          </motion.div>
         </div>
+
+        {/* DESKTOP VIEW */}
+        <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="space-y-6"
+          >
+           <h4 className="text-xl md:text-4xl font-black uppercase leading-none tracking-tighter text-black">
+  Nourishing <br />
+  <span className="text-[#7C3AED]">Every Family</span>
+</h4>
+
+<p className="text-sm md:text-base font-medium max-w-sm text-gray opacity-80 leading-relaxed">
+  Annapurna is dedicated to serving communities with purity, trust, 
+  and sustainable food solutions that bring hope, nutrition, and care 
+  to every household across India.
+</p>
+
+          
+          </motion.div>
+
+          {/* Right Content */}
+          <div className="relative flex justify-center items-center">
+
+            <motion.div
+              variants={bowlVariants}
+              initial="hidden"
+              animate={["visible", "animate"]}
+              className="relative w-[220px] h-[220px] md:w-[420px] md:h-[420px]"
+            >
+              {/* Bowl */}
+              <div className="w-full h-full rounded-full overflow-hidden border-[12px] border-white shadow-[0_20px_50px_rgba(124,58,237,0.2)] bg-white p-2">
+                <img
+                  src="/847b5c83429fbfd7fdeb7dd70f56fdda.jpg"
+                  alt="Cocoberry Bowl"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+
+              {/* Optional Overlay */}
+              <motion.div>
+
+              </motion.div>
+            </motion.div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   );

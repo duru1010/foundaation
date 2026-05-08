@@ -56,23 +56,39 @@ export function SwavalambanCampaignCard() {
           </div>
 
           {/* Progress Bar (0%) */}
-          <CardItem translateZ={30} className="w-full bg-gray-100 h-2 rounded-full mt-2 overflow-hidden border border-gray-200/50">
-            <div className="bg-[#7C3AED] h-full w-[0%] transition-all duration-1000" />
-          </CardItem>
+         <CardItem
+  translateZ={30}
+  className="w-full bg-gray-100 h-2 rounded-full mt-2 overflow-hidden border border-gray-200/50"
+>
+  <div className="bg-[#7C3AED] h-full w-[0%] transition-all duration-1000" />
+</CardItem>
 
-          {/* Action Button */}
-          <Link href="/donate" className="block w-full">
-              <motion.button 
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-purple-600 text-white font-black py-5 rounded-2xl shadow-2xl shadow-purple-200 hover:bg-purple-700 transition-all flex items-center justify-center gap-3 group"
-              >
-                Donate Now
-                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </motion.button>
-            </Link>
+{/* Action Button */}
+<div className="mt-6 w-full">
+  <Link href="/donate">
+    <motion.button
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      className="w-full bg-purple-600 text-white font-black py-5 rounded-2xl shadow-2xl shadow-purple-200 hover:bg-purple-700 transition-all flex items-center justify-center gap-3 group"
+    >
+      Donate Now
+
+      <svg
+        className="w-5 h-5 transition-transform group-hover:translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
+          d="M14 5l7 7m0 0l-7 7m7-7H3"
+        />
+      </svg>
+    </motion.button>
+  </Link>
+</div>
         </CardBody>
       </CardContainer>
     </div>

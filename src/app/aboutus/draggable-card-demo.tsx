@@ -170,7 +170,7 @@ export function DraggableCardDemo() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="pointer-events-none relative z-10 h-48 w-48 md:h-80 md:w-80 object-cover rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                    className="pointer-events-none relative z-10 h-80 w-80 md:h-80 md:w-80 object-cover rounded-xl shadow-2xl transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/10 rounded-xl pointer-events-none"></div>
                 </div>
